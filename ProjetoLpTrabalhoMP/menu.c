@@ -34,8 +34,7 @@ void menu(Vendedores *vendedores, Mercados *mercados) {
     printf("0- Sair do programa e guardar alterações\n");
 
     puts(MENU);
-    printf("Escolha uma opção: ");
-    scanf("%d", &escolha);
+    escolha = obterInteiro(0, 12, "\nEscolha uma opção!\n");
     system("clear");
 
 
