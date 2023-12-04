@@ -366,9 +366,10 @@ void writeMercados(Mercados *mercados) {
 }
 
 void listarMercadosComissoes(Mercados mercados) {
-    int i, j, comissoes[mercados.numMercados], temp;
+    int i, j, comissoes[mercados.numMercados],mercadoIndice[mercados.numMercados], temp;
     for (i = 0; i < mercados.numMercados - 1; i++) {
         comissoes[i] = mercados.mercados[i].numComissoes;
+        mercadoIndice[i] = i;
     }
 
     for (i = 0; i < mercados.numMercados - 1; i++) {
@@ -377,6 +378,10 @@ void listarMercadosComissoes(Mercados mercados) {
                 temp = comissoes[j];
                 comissoes[j] = comissoes[j + 1];
                 comissoes[j + 1] = temp;
+                temp = mercadoIndice[j];
+                mercadoIndice[j] = mercadoIndice[j + 1];
+                mercadoIndice[j + 1] = temp;
+                
             }
         }
     }
